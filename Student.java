@@ -1,44 +1,30 @@
-package second;
+package myfirstjava;
 
-class Student {
-    private int id;
-    private String name;
-    private int age;
-    private int grade;
-    public Student(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Student(int id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        
-        this.age = age;
-    }
-    public Student(int id, String name, int age, int grade) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.grade = grade;
-    }
-    public void displayStudent() {
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Grade: " + grade);
-    }
-    
-    public static void main(String[] args) {
-      
-        Student student1 = new Student(1, "priya");
-        student1.displayStudent();
-        
-        Student student2 = new Student(2, "sri", 20);
-        student2.displayStudent();
-        
-        Student student3 = new Student(3, "manisha", 22, 12);
-        student3.displayStudent();
-    }
+public class Student {
+	private String name;
+	private int age;
+	public Student (String name,int age) {
+		this.name=name;
+		this.age=age;
+	}
+   public Student (Student s) {
+	   this.name=s.name;
+	   this.age=s.age;
+   }
+   public void display() {
+	   System.out.println("Name: "+this.name);
+	   System.out.println("Age: "+this.age);
+   }
+   
+	   public static void main(String[] args) {
+		   Student s=new Student("swathi",20);
+		   System.out.println("Dispalying the original object");
+		   s.display();
+		   System.out.println("Displaying the copied object");
+		   Student copiedStudent=new Student(s);
+		   copiedStudent.display();
+		   
+	   }
 }
+
 
